@@ -44,6 +44,8 @@ public class Account {
         // TODO: skal debugges og returnere ny saldo. Smid fejl hvis amount < 0.
         if (amount <= 0) {
             System.out.println("you can only deposit positive amounts!");
+            return getBalance();
+
         } else if (amount > 0)
         {
             System.out.println("deposit complete");
