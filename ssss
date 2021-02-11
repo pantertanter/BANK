@@ -1,0 +1,94 @@
+[33mcommit bcb2eba7cd838083ab34a8588c08c40487758d30[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jens Vogel <jens.o.pingel@gmail.com>
+Date:   Thu Feb 11 12:22:14 2021 +0100
+
+    updates 'deposit amount' section
+
+[33mcommit 279555b282e52bf600dff66959f75daad13e0b9c[m
+Merge: 1badbdd 35876ca
+Author: Jens Vogel <jens.o.pingel@gmail.com>
+Date:   Thu Feb 11 12:15:36 2021 +0100
+
+    Merge branch 'main' of https://github.com/Capa2/C4unittest
+
+[33mcommit 1badbddb12ab24b0fcf7995f2666b1c0cdcd1a2e[m
+Author: Jens Vogel <jens.o.pingel@gmail.com>
+Date:   Thu Feb 11 12:15:32 2021 +0100
+
+    commit without changes
+
+[33mcommit 35876caa85670179195fe09d3c09d819049616a1[m
+Author: Alexander Stub Michelsen <cph-am8@cphbusiness.dk>
+Date:   Thu Feb 11 12:14:40 2021 +0100
+
+    add withdrawamount
+
+[33mcommit 6f68e31fb789a6ae85b7df7d995715358991fd03[m
+Merge: b704b44 0968dba
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 12:13:36 2021 +0100
+
+    Merge branch 'main' of https://github.com/Capa2/C4unittest
+
+[33mcommit b704b44a0ff079d83f4d39dc5e48b20c9b75b707[m
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 12:13:20 2021 +0100
+
+    setup Setup() in AccountTest
+
+[33mcommit 0968dba8f8b19568e1967bfea0849cf3f790bc6b[m
+Merge: c51a98e 8d16f7b
+Author: Alexander Stub Michelsen <cph-am8@cphbusiness.dk>
+Date:   Thu Feb 11 12:09:19 2021 +0100
+
+    Merge branch 'main' of https://github.com/Capa2/C4unittest
+
+[33mcommit c51a98e168813ffc0404e6b0d5ae0b263a444439[m
+Author: Alexander Stub Michelsen <cph-am8@cphbusiness.dk>
+Date:   Thu Feb 11 12:09:06 2021 +0100
+
+    Add withdrawamount
+
+[33mcommit 8d16f7b4bdacc880a39ddf3cfd66a323044eb1a0[m
+Merge: c5b7659 48d10fa
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 12:06:32 2021 +0100
+
+    Merge branch 'main' of https://github.com/Capa2/C4unittest
+
+[33mcommit c5b7659a87d720a439f65c65c76452525198a830[m
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 12:06:13 2021 +0100
+
+    fix bug
+
+[33mcommit 48d10fa22df0d4cef6f7ffa77e93b185555657d8[m
+Merge: bc75997 1280a62
+Author: Alexander Stub Michelsen <cph-am8@cphbusiness.dk>
+Date:   Thu Feb 11 12:01:23 2021 +0100
+
+    Merge branch 'main' of https://github.com/Capa2/C4unittest
+
+[33mcommit bc7599721ad67efb28e8ffa8195306e4694bd749[m
+Author: Alexander Stub Michelsen <cph-am8@cphbusiness.dk>
+Date:   Thu Feb 11 12:00:59 2021 +0100
+
+    add sum
+
+[33mcommit 1280a622bb239f9579b8657c45d4b5709272793e[m
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 11:59:14 2021 +0100
+
+    add test folder and additional tests
+
+[33mcommit a5c187913b3a3a77d57309145c1609cad93921d7[m
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 11:52:21 2021 +0100
+
+    Add account test
+
+[33mcommit fc81b789d96bf874437ce26a877697833399fa5e[m
+Author: Capa2 <johan931@gmail.com>
+Date:   Thu Feb 11 11:40:19 2021 +0100
+
+    first commit

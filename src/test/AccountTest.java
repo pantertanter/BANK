@@ -2,23 +2,33 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AccountTest {
 
-    private List<Transaction> transactions;
+    private Account account;
     private Customer customer;
 
     @BeforeEach
     void setUp() {
-        this.transactions = new ArrayList<>();
-        this.customer = new Customer("Bot");
+        customer = new Customer("Bot");
+        account = new Account(customer);
+        account.depositAmount(500);
+        account.depositAmount(200);
+        account.depositAmount(400);
     }
 
     @Test
     void getBalance() {
+        int sum = 0;
+        for (Transaction transaction : account.getTransactions()) {
+            sum += transaction.getAmount();
+        }
+        assertEquals(sum, account.getBalance());
     }
 
     @Test
