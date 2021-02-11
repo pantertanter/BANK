@@ -22,12 +22,21 @@ public class Account {
         for (Transaction transaction : transactions) {
             sum += transaction.getAmount();
         }
-        return 0;
+        return sum;
     }
 
-    public int withDrawAmount(int amount){
+    public int withDrawAmount(int amount) {
         // TODO: skal kodes og returnere ny saldo. Smid fejl hvis amount > saldo
-        return 0;
+        if (amount > getBalance()) {
+            System.out.println("Du har ikke penge nok på kontoen!");
+            return getBalance();
+        } else if (amount <= getBalance())
+        {
+            System.out.println("Hævningen er fuldført");
+            return getBalance() - amount;
+        }
+        return getBalance() - amount;
+
     }
 
     public int depositAmount(int amount){
