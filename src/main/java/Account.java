@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -41,8 +42,16 @@ public class Account {
 
     public int depositAmount(int amount){
         // TODO: skal debugges og returnere ny saldo. Smid fejl hvis amount < 0.
+        if (amount <= 0) {
+            System.out.println("you can only deposit positive amounts!");
+        } else if (amount > 0)
+        {
+            System.out.println("deposit complete");
+            return getBalance() + amount;
+        }
+
         transactions.add(new Transaction(amount, new Date()));
-        return 0;
+        return getBalance() + amount;
     }
 
     public List<Transaction> getTransactions() {
