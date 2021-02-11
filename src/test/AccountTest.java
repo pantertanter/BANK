@@ -37,5 +37,15 @@ class AccountTest {
 
     @Test
     void depositAmount() {
+        int sum = 0;
+        for (Transaction transaction : account.getTransactions()) {
+            if(transaction.getAmount() > 0){
+               sum += transaction.getAmount();
+               assertEquals(sum, );
+            }
+        }
+        account.getBalance():
+
     }
+
 }

@@ -13,7 +13,7 @@ public class Main {
         newBalance = account.depositAmount(325);
         System.out.println(String.format("Ny balance: %,d", newBalance));
 
-        newBalance = account.depositAmount(1000);
+        newBalance = account.depositAmount(2000000);
         System.out.println(String.format("Ny balance: %,d", newBalance));
 
     }
