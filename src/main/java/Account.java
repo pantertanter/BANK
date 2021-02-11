@@ -30,8 +30,11 @@ public class Account {
         if(amount > saldo)
         {
             System.out.println("Du har ikke penge nok på kontoen!");
+        } else if (amount <= saldo)
+        {
+            System.out.println("Hævningen er fuldført");
         }
-        return ;
+        return getBalance() - amount;
     }
 
     public int depositAmount(int amount){
