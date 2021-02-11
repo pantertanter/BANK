@@ -25,16 +25,18 @@ public class Account {
         return sum;
     }
 
-    public int withDrawAmount(int amount){
+    public int withDrawAmount(int amount) {
         // TODO: skal kodes og returnere ny saldo. Smid fejl hvis amount > saldo
-        if(amount > saldo)
-        {
+        if (amount > getBalance()) {
             System.out.println("Du har ikke penge nok på kontoen!");
-        } else if (amount <= saldo)
+            return getBalance();
+        } else if (amount <= getBalance())
         {
             System.out.println("Hævningen er fuldført");
+            return getBalance() - amount;
         }
         return getBalance() - amount;
+
     }
 
     public int depositAmount(int amount){
