@@ -27,8 +27,11 @@ class AccountTest {
         int sum = 0;
         for (Transaction transaction : account.getTransactions()) {
             sum += transaction.getAmount();
+            System.out.println("Transaction: " + transaction.getAmount());
         }
         assertEquals(sum, account.getBalance());
+        System.out.println("----------");
+        System.out.println("Sum-all: " +  sum);
     }
 
     @Test
