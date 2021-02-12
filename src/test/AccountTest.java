@@ -27,8 +27,11 @@ class AccountTest {
         int sum = 0;
         for (Transaction transaction : account.getTransactions()) {
             sum += transaction.getAmount();
+            System.out.println("Transaction: " + transaction.getAmount());
         }
         assertEquals(sum, account.getBalance());
+        System.out.println("----------");
+        System.out.println("Sum-all: " +  sum);
     }
 
     @Test
@@ -42,10 +45,10 @@ class AccountTest {
 
     @Test
     void depositAmount() {
-        int expected = 1100;
-        int actual = 1100;
+        int expected = 1100 + 100;
+        int actual = account.depositAmount(100);
         assertEquals(expected, actual);
-        assertEquals(1200, account.depositAmount(100));
+        assertEquals(1200 + 100, account.depositAmount(100));
 
     }
 
