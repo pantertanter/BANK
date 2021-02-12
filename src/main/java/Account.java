@@ -34,10 +34,9 @@ public class Account {
         } else if (amount <= getBalance())
         {
             System.out.println("Hævningen er fuldført");
+            transactions.add(new Transaction(amount, new Date()));
         }
-        transactions.add(new Transaction(amount, new Date()));
         return getBalance();
-
     }
 
     public int depositAmount(int amount){

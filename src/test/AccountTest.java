@@ -36,6 +36,11 @@ class AccountTest {
 
     @Test
     void withDrawAmount() {
+        int sum = 0;
+        for (Transaction transaction : account.getTransactions()) {
+            sum += transaction.getAmount();
+        }
+        assertEquals(sum, account.getBalance());
     }
 
     @Test
