@@ -36,11 +36,10 @@ class AccountTest {
 
     @Test
     void withDrawAmount() {
-        int sum = 0;
-        for (Transaction transaction : account.getTransactions()) {
-            sum += transaction.getAmount();
-        }
-        assertEquals(sum, account.getBalance());
+        int expected = 1000;
+        int actual = account.withDrawAmount(100);
+        assertEquals(expected, actual);
+        assertEquals(1000, actual);
     }
 
     @Test

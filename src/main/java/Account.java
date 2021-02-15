@@ -29,12 +29,12 @@ public class Account {
     public int withDrawAmount(int amount) {
         // TODO: skal kodes og returnere ny saldo. Smid fejl hvis amount > saldo
         if (amount > getBalance()) {
-            System.out.println("Du har ikke penge nok på kontoen!");
+            System.out.println("You dont have enough money on your account");
 
         } else if (amount <= getBalance())
         {
             System.out.println("Hævningen er fuldført");
-            transactions.add(new Transaction(amount, new Date()));
+            transactions.add(new Transaction(-amount, new Date()));
         }
         return getBalance();
     }
