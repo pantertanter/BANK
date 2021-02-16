@@ -4,6 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        MultiUser multiuser = new MultiUser();
+        multiuser.MakePersonalUser();
+
         Customer c1 = new Customer("Jon");
         Account account = new Account(c1);
 

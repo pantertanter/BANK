@@ -4,6 +4,8 @@ public class Customer {
 
     private String name;
 
+    private int Pin;
+
     public Customer(String name) {
         this.name = name;
     }
@@ -11,6 +13,12 @@ public class Customer {
     public String getName() {
         return name;
     }
+
+    public void setName(String name) { this.name = name; }
+
+    public int getPin() { return Pin; }
+
+    public void setPin(int pin) { Pin = pin; }
 
     @Override
     public boolean equals(Object o) {
