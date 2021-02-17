@@ -4,8 +4,6 @@ public class MultiUser {
 
     Customer customer = new Customer("");
 
-   //MultiUser multiuser = new MultiUser();
-
     boolean running;
 
     public String UserMenu() {
