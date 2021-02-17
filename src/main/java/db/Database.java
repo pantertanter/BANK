@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Database {
     private Connection con;
-    Statement stmt;
+    private Statement stmt;
     private ResultSet rs;
 
     public Database() {
@@ -35,7 +35,16 @@ public class Database {
         }
     }
 
+    public ResultSet getResults() {
+        return rs;
+    }
+
     public ResultSet getResults(String query) {
+        genResults(query);
+        return rs;
+    }
+
+    public void genResults(String query) {
         stmt = null;
         rs = null;
         try {
@@ -44,6 +53,14 @@ public class Database {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return rs;
+    }
+
+    public String getNextString(String column) {
+        try {
+            if (rs.next()) return rs.getString(column);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 }
