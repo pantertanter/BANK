@@ -5,9 +5,8 @@ public class Main {
     public static void main(String[] args) {
 
         MultiUser multiuser = new MultiUser();
-        multiuser.MakePersonalUser();
 
-        Customer c1 = new Customer("Jon");
+        Customer c1 = new Customer(multiuser.UserMenu());
         Account account = new Account(c1);
 
         int newBalance = account.depositAmount(125);
