@@ -18,7 +18,7 @@ public class Database {
         }
     }
     public ResultSet getResults(String query) {
-        connect("c4bank", "root", "ms224jok");
+        connect("c4bank", "root", "mq224jok");
         Statement stmt = null;
         ResultSet rs = null;
         try {
