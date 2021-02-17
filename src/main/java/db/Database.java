@@ -3,10 +3,14 @@ package db;
 import java.sql.*;
 
 public class Database {
-    Connection con;
+    private Connection con;
+    Statement stmt;
+    private ResultSet rs;
+
     public Database() {
     }
-    private void connect(String database, String user, String pass) {
+
+    public void connect(String database, String user, String pass) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
@@ -17,16 +21,27 @@ public class Database {
             throwables.printStackTrace();
         }
     }
-    public ResultSet getResults(String query) {
 
+    public void connect() { // default connection
         connect("c4-bankdb", "root", "Mangojuice1");
+    }
 
-        Statement stmt = null;
-        ResultSet rs = null;
+    public void close() {
+        try {
+            con.close();
+            rs.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public ResultSet getResults(String query) {
+        stmt = null;
+        rs = null;
+
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
-            con.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
