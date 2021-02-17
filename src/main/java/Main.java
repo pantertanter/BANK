@@ -9,6 +9,8 @@ public class Main {
         Database db = new Database();
         ResultSet rs = db.getResults("SELECT * FROM users");
         Customer c1 = new Customer("Jon");
+        MultiUser multiuser = new MultiUser();
+        Customer c1 = new Customer(multiuser.UserMenu());
         Account account = new Account(c1);
 
         int newBalance = account.depositAmount(125);
