@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dat</groupId>
-    <artifactId>bankdemo</artifactId>
+    <artifactId>c4bank</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -14,7 +14,12 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.7.1</version>
         </dependency>
+<<<<<<< HEAD
 	<dependency>
+=======
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+>>>>>>> c89404cd3b3077da616a82d3ab4a9bf2d7ed21ec
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.23</version>
