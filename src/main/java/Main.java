@@ -1,9 +1,13 @@
+import db.Database;
+
+import java.sql.*;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        Database db = new Database();
+        ResultSet rs = db.getResults("SELECT * FROM users");
         Customer c1 = new Customer("Jon");
         Account account = new Account(c1);
 
