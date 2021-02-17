@@ -3,8 +3,7 @@ import java.util.Objects;
 public class Customer {
 
     private String name;
-
-    private int Pin;
+    private int id, pin;
 
     public Customer(String name) {
         this.name = name;
@@ -14,11 +13,17 @@ public class Customer {
         return name;
     }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public int getPin() { return Pin; }
+    public int getPin() {
+        return pin;
+    }
 
-    public void setPin(int pin) { Pin = pin; }
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
 
     @Override
     public boolean equals(Object o) {
