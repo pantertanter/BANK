@@ -1,5 +1,3 @@
-package db;
-
 import java.sql.*;
 
 public class Database {
@@ -9,6 +7,7 @@ public class Database {
 
     public Database() {
     }
+
     public void connect() { // default connection
         connect("c4bank", "bank", "c4c4c4");
     }
@@ -54,5 +53,32 @@ public class Database {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public void insertTransaction(Transaction transaction) {
+        stmt = null;
+        try {
+            stmt = con.createStatement();
+            stmt.execute(getTransactionInsertStatement(transaction));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public String getTransactionInsertStatement(Transaction transaction) {
+        boolean originExist = transaction.getOrigin() != null;
+        boolean destinationExist = transaction.getDestination() != null;
+        StringBuilder sql = new StringBuilder("INSERT INTO transactions (amount, ");
+        if (originExist) sql.append("origin");
+        if (originExist && destinationExist) sql.append(", ");
+        if (destinationExist) sql.append("destination");
+        sql.append("VALUES (");
+        sql.append(transaction.getAmount());
+        sql.append(", ");
+        if (originExist) sql.append(transaction.getOrigin());
+        if (originExist && destinationExist) sql.append(", ");
+        if (destinationExist) sql.append(transaction.getDestination());
+        sql.append(");");
+        return sql.toString();
     }
 }

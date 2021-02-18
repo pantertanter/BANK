@@ -1,5 +1,4 @@
 import console.Console;
-import db.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +6,7 @@ import java.sql.SQLException;
 public class DbAcces extends Console {
     Database db;
     Account account;
+    Account target;
 
     public DbAcces(boolean start) {
         super();
@@ -46,8 +46,5 @@ public class DbAcces extends Console {
                 "  customer: " + dba.getCustomer().getName() +
                 "  cid: " + dba.getCustomer().getId());
         start();
-    }
-
-    public void createTransaction() {
     }
 }
