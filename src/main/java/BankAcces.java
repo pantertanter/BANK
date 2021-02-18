@@ -18,18 +18,18 @@ public class BankAcces extends Console {
     }
 
     public void login() {
-        String username = requestString("Please enter your username");
+        String username = requestString("Please enter your username"); // Console method to get user input
         db.connect();
-        ResultSet rs = db.getResults("SELECT * FROM users WHERE username LIKE '%" + username + "%'");
-        while (true) {
-            try {
-                if (!rs.next()) {
-                    System.out.println("No user match");
-                    break;
-                } else if (rs.getString("username") == username) pass(username);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+        ResultSet rs = db.getResults("SELECT * FROM users WHERE username = '" + username + "'");
+        try { // to find a matching user
+            while (rs.next()) {
+                if (rs.getString(2).equals(username)) {
+                    pass(username);
+                    return; // Exit without closing db upon user match
+                }
             }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         db.close();
     }
