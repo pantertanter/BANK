@@ -23,7 +23,7 @@ public class Database {
     }
 
     public void connect() { // default connection
-        connect("c4-bankdb", "root", "Mangojuice1");
+        connect("c4-bankdb", "bank", "c4c4c4");
     }
 
     public void close() {

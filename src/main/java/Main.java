@@ -1,12 +1,15 @@
 import db.Database;
 
 import java.sql.*;
-import java.util.List;
 
 public class Main {
 
+
     public static void main(String[] args) {
         Database db = new Database();
+        MultiUser mu = new MultiUser();
+        Boot b = new Boot();
+
 
         try {
             db.connect();
