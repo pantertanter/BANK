@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MultiUser {
 
-    Customer customer = new Customer("");
+    Customer customer = new Customer("", 0, 0000);
 
     boolean running;
 
@@ -29,7 +30,7 @@ public class MultiUser {
                     case 3:
                         break;
                     default:
-                        System.out.println("Choice must be a value between 1 and 3.");
+                        System.out.println("Choice must be a value between 1 and 3 included.");
                 }
         return customer.getName();
     }
@@ -65,7 +66,10 @@ public class MultiUser {
         Scanner input = new Scanner(System.in);
 
         String name = input.nextLine();
-        customer.setName(name);
+        Staff.setName(name);
+
+        ArrayList<Staff> adminStaffArray = new Arraylist<>();
+        adminStaffArray.add(new Staff())
 
         System.out.println("You entered " + customer.getName() + " as username"); // y/n function ?
         System.out.println("You are staff/admin in the system");
