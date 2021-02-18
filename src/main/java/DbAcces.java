@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbAcces extends Console {
     Database db;
-    Account originAccount;
+    Account account;
 
     public DbAcces(boolean start) {
         super();
@@ -15,38 +15,39 @@ public class DbAcces extends Console {
     }
 
     public void start() {
-        originAccount = null;
-        login();
+        String name = requestString("Please enter your name or type 'q' to quit");
+        if (!name.equals("q")) account = getAccountByName(name);
     }
 
-    public void login() {
-        String customerName = requestString("Please enter your name or type 'q' to quit");
-        if (customerName.equals("q")) return;
+    public Account getAccountByName(String customerName) {
+        Account dba = null;
         db.connect();
         ResultSet dbAccount = db.getResults("SELECT * FROM accounts WHERE customer = '" + customerName + "'");
         try {
             if (dbAccount.next() && dbAccount.getString("customer").equals(customerName)) {
-                originAccount = new Account(new Customer(customerName));
-                originAccount.setId(dbAccount.getInt("uid"));
+                dba = new Account(new Customer(customerName));
+                dba.setId(dbAccount.getInt("uid"));
                 ResultSet dbCustomer = db.getResults("SELECT * FROM customers WHERE name = '" + customerName + "'");
                 if (dbCustomer.next() && dbCustomer.getString("name").equals(customerName)) {
-                    originAccount.getCustomer().setId(dbCustomer.getInt("cid"));
+                    dba.getCustomer().setId(dbCustomer.getInt("cid"));
                 } else System.out.println("No customer match.");
-                pass(originAccount);
-                // return; // Exit without closing db upon user match
             } else System.out.println("No account match.");
         } catch (
                 SQLException throwables) {
             throwables.printStackTrace();
         }
         db.close();
+        return dba;
     }
 
-    public void pass(Account originAccount) {
+    public void printAccountData(Account dba) {
         System.out.println("Account loaded from database: " +
-                "  uid: " + originAccount.getId() +
-                "  customer: " + originAccount.getCustomer().getName() +
-                "  cid: " + originAccount.getCustomer().getId());
-        login();
+                "  uid: " + dba.getId() +
+                "  customer: " + dba.getCustomer().getName() +
+                "  cid: " + dba.getCustomer().getId());
+        start();
+    }
+
+    public void createTransaction() {
     }
 }
