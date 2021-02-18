@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+/*
 public class MultiUser {
 
     Customer customer = new Customer("");
@@ -72,4 +72,4 @@ public class MultiUser {
 
         return customer.getName();
     }
-}
+}*/

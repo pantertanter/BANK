@@ -23,6 +23,7 @@ public class Database {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        System.out.println("db open.");
     }
 
     public void close() { // Close database connection
@@ -32,6 +33,7 @@ public class Database {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        System.out.println("db closed.");
     }
 
     public ResultSet getResults() { // Get the last ResultSet generated.
