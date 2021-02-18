@@ -2,10 +2,10 @@ import java.util.Objects;
 
 public class Customer {
 
-    private String name;
-    private int id, pin;
+    private String name, pin;
+    private int id;
 
-    public Customer(String name, int id, int pin) {
+    public Customer(String name, int id, String pin) {
         this.name = name;
         this.id = id;
         this.pin = pin;
@@ -19,11 +19,11 @@ public class Customer {
         this.name = name;
     }
 
-    public int getPin() {
+    public String getPin() {
         return pin;
     }
 
-    public void setPin(int pin) {
+    public void setPin(String pin) {
         this.pin = pin;
     }
 

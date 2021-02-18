@@ -4,6 +4,10 @@ import java.util.Scanner;
 public class MultiUser {
 
     Customer customer = new Customer("", 0, 0000);
+    Staff staff = new Staff("", 0, "");
+
+    ArrayList<Staff> adminStaffArray = new Arraylist<>();
+    ArrayList<Customer> customersArray = new Arraylist<>();
 
     boolean running;
 
@@ -47,18 +51,17 @@ public class MultiUser {
         //while (running = true) {
             System.out.println("Input a four digit pin for " + name);
             // Maybe make random and print
-            int Pin = input.nextInt();
+            String Pin = input.nextLine();
             customer.setPin(Pin);
-            if (customer.getPin() > 999 && customer.getPin() < 10000) {
+            if (customer.getPin().length() == 3) {
                 System.out.println("Username " + customer.getName() + " Pin " + customer.getPin());
                 //break;
+                customersArray.add(new Customer(customer.getName(), customersArray.size() + 1, customer.getPin()));
             } else {
                 //throw new ArithmeticException("Invalid input error");
                 System.out.println("Invalid input error");
             }
-        //}
         return customer.getName();
-
     }
 
     public String AdminStaff() {
@@ -66,12 +69,23 @@ public class MultiUser {
         Scanner input = new Scanner(System.in);
 
         String name = input.nextLine();
-        Staff.setName(name);
+        staff.setName(name);
 
-        ArrayList<Staff> adminStaffArray = new Arraylist<>();
-        adminStaffArray.add(new Staff())
+        System.out.println("Input a four digit pin for " + Staff.getname);
+        // Maybe make random and print
+        String Pin = input.nextLine();
+        staff.setPin(Pin);
+        if (customer.getPin().length() == 3) {
+            System.out.println("Username " + staff.getName() + " Pin " + staff.getPin());
+            //break;
+        } else {
+            //throw new ArithmeticException("Invalid input error");
+            System.out.println("Invalid input error");
+        }
 
-        System.out.println("You entered " + customer.getName() + " as username"); // y/n function ?
+        adminStaffArray.add(new Staff(staff.getName(), adminStaffArray.size() + 1, staff.getPin()));
+
+        System.out.println("Username " + staff.getName() + " Pin " + staff.getPin()); // y/n function ?
         System.out.println("You are staff/admin in the system");
 
         return customer.getName();
