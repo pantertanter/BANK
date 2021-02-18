@@ -1,12 +1,9 @@
-import db.Database;
-
-import java.sql.*;
-import java.util.List;
+import db.DbAcces;
 
 public class Main {
 
     public static void main(String[] args) {
-        BankAcces acces = new BankAcces(true);
+        DbAcces acces = new DbAcces(true);
         //Customer c1 = new Customer("Jon");
         /*
         MultiUser multiuser = new MultiUser();

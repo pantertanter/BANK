@@ -1,13 +1,15 @@
+package db;
+
 import console.Console;
 import db.Database;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BankAcces extends Console {
+public class DbAcces extends Console {
     Database db;
 
-    public BankAcces(boolean start) {
+    public DbAcces(boolean start) {
         super();
         db = new Database();
         if (start) start();
