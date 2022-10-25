@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class MultiUser {
 
-    Customer customer = new Customer("", 0, 0000);
+    Customer customer = new Customer("", 0, "0000");
     Staff staff = new Staff("", 0, "");
 
-    ArrayList<Staff> adminStaffArray = new Arraylist<>();
-    ArrayList<Customer> customersArray = new Arraylist<>();
+    ArrayList<Staff> adminStaffArray;
+    ArrayList<Customer> customersArray;
 
-    boolean running;
+    Boolean running;
 
     public String UserMenu() {
 
@@ -71,7 +71,7 @@ public class MultiUser {
         String name = input.nextLine();
         staff.setName(name);
 
-        System.out.println("Input a four digit pin for " + Staff.getname);
+        System.out.println("Input a four digit pin for " + staff.getName());
         // Maybe make random and print
         String Pin = input.nextLine();
         staff.setPin(Pin);

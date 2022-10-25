@@ -15,7 +15,7 @@ class AccountTest {
 
     @BeforeEach
     void setUp() {
-        customer = new Customer("Bot", 1, 1234);
+        customer = new Customer("Bot", 1, "1234");
         account = new Account(customer);
         account.depositAmount(500);
         account.depositAmount(200);
